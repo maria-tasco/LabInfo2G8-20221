@@ -9,8 +9,8 @@ int main()
 
     do {
         int g=0, suma = 0;
-        cout << "Ingrese un numero impar: " << endl ; cin >> num1 ;
-        //num1 = 5;
+        //cout << "Ingrese un numero impar: " << endl ; cin >> num1 ;
+        num1 = 5;
         for ( unsigned short f=0, ts=0, ti = 0; f<num1; f++)
         {
             for (unsigned short c = 0; c < num1 ; c++)
@@ -22,7 +22,7 @@ int main()
                 }
                 else if (f > c && f > num1-1-c) //Triangulo inferior
                 {
-                    g = num1 -1-f;
+                    g = num1-1-f;
                     ts ++;
                     cout << (num1-2*g)*(num1-2*g)-2*(num1-2*g-1)-ts << '\t';
                 }
@@ -42,7 +42,8 @@ int main()
             cout << endl << endl << endl;
         }
         suma --;
-        cout << "En una espiral de: "<< num1 << "x" << num1 << "La suma de la diagonal es: " << suma<<endl;
+
+        cout << "En una espiral de: "<< num1 << "x" << num1 << " La suma de la diagonal es: " << suma<<endl;
 
         cout<<"ingrese 1 para seguir probando o ingrese 0 para salir"<<endl; cin>>op;
     }while(op!=0);
