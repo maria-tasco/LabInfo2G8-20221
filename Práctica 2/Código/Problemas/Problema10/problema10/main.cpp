@@ -1,3 +1,4 @@
+/*Link versión tinkercad: https://www.tinkercad.com/things/dHqYuwzeuGx*/
 #include <iostream>
 
 using namespace std;
@@ -48,7 +49,6 @@ int main()
                 }
             }
         }
-
 
         cout<<endl<<"==Ingrese 1 para seguir probando o ingrese 0 para salir=="<<endl; cin>>op;
     } while (op!=0);
