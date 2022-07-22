@@ -16,14 +16,16 @@ int main()
 //        for(int i=0;i<=15;i++)
 //            *ptr[i]=sala_cine[i][0];
      do {
-        cout<<"Sala de cine actual: "<<endl; mostrar_matriz(15,20,ptr);
+        cout<<"Sala de cine actual: "<<endl;
+        mostrar_matriz(15,20,ptr);
         cout <<"Bienvenido:"<<endl<<"Para hacer reserva ingrese 1, para realizar cancelaciones ingrese 2"<<endl;
         cin>>to_do;
         switch (to_do) {
             case 1:{
                 cout<<"Ingrese la fila (Letra A-O) y el numero del asiento (Numero 1-20)"<<endl;
                 cin>>fila; cin>>num_asiento;
-                cout<<"Sala de cine actual: "<<endl; mostrar_matriz(15,20,ptr);
+                cout<<"Sala de cine actual: "<<endl;
+                mostrar_matriz(15,20,ptr);
                 num_asiento--;
                 if(fila>='A' && fila<='J'){
                     sala_cine[fila-17-48][num_asiento]='+';
@@ -35,7 +37,8 @@ int main()
             case 2:{
                 cout<<"Ingrese la fila (Letra A-O) y el numero del asiento (Numero 1-20)"<<endl;
                 cin>>fila; cin>>num_asiento;
-                cout<<"Sala de cine actual: "<<endl; mostrar_matriz(15,20,ptr);
+                cout<<"Sala de cine actual: "<<endl;
+                mostrar_matriz(15,20,ptr);
                 num_asiento--;
                 if(fila>='A' && fila<='J'){
                     sala_cine[fila-17-48][num_asiento]='-';
@@ -54,9 +57,9 @@ int main()
 }
 
 void mostrar_matriz(int fil, int col, char *matriz[]){
-    for(fil=0; fil<15;fil++){
-        for(col=0; col<20; col++)
-            cout<<matriz[fil][col];
+    for(int i=0; i<fil;i++){
+        for(int j=0; j<col; j++)
+            cout<<matriz[i][j];
         cout<<endl;
     }
 }
