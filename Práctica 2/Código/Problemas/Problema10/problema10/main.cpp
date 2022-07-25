@@ -1,4 +1,4 @@
-/*Link versión tinkercad: https://www.tinkercad.com/things/dHqYuwzeuGx*/
+/*! Link tinkercad: https://www.tinkercad.com/things/dHqYuwzeuGx*/
 #include <iostream>
 
 using namespace std;
