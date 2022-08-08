@@ -4,11 +4,14 @@
 #include <fstream>
 using namespace std;
 
-//Estoy creando mi propia libreria para manejar archivos de texto con char
+/*Create a .h and .cpp for file handling, there are the functions to read, write and
+ *create files. There is also a function to reserve memory for the data to be saved*/
 void create (char *name, unsigned short int op_txt_bin);
 void write(char *nombre, char *datos, unsigned long long int tam, bool tipo);
 unsigned long long size(char *name);
-bool read (char *name, unsigned long long size, char *data);
+bool read (char *name, unsigned long long *size, char *data);
 void delete_f(char *nombre);
+char * dynamic_data_memory(char *file_name,
+                           unsigned long long *file_size, char *original_file);
 
 #endif // MANEJO_ARCHIVOS_H

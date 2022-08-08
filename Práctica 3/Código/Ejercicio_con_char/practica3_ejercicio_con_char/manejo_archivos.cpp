@@ -18,7 +18,7 @@ void write(char *nombre, char *datos, unsigned long long tam, bool tipo)
 
 }
 
-bool read(char *name, unsigned long long size, char *data)
+bool read(char *name, unsigned long long *size, char *data)
 {
     fstream text(name, fstream::in | fstream::binary);
     bool confirmar=text.is_open();
@@ -27,11 +27,10 @@ bool read(char *name, unsigned long long size, char *data)
             /*traversing file and get characters to file one to one.
              after reading and go over to information in array
              data put in the last position the end line character.*/
-            for(unsigned long long int i=0; i<size; i++){
+            for(unsigned long long int i=0; i<*size; i++)
                 data[i]=text.get();
-            }
-            cout<<endl;
-            data[size]='\0';
+
+            data[*size]='\0';
         }  catch (bad_alloc) {
             cout<<"The file input is heavy for the program."<<endl;
         }
@@ -56,4 +55,25 @@ unsigned long long size(char *name)
         cout<<"The file can not open"<<endl;
     text.close();
     return size_file;
+}
+
+char *dynamic_data_memory(char *data_file,
+                          unsigned long long *file_size, char *original_file)
+{
+    char *data_file_aux=new char[*file_size];
+    for(unsigned long long int i=0; i<*file_size; i++){
+        data_file_aux[i]=data_file[i];
+    }
+    delete [] data_file;
+    *file_size=size(original_file);
+    cout<<*file_size<<endl;
+    data_file=new char[*file_size+1];
+    for(unsigned long long int i=0; i<*file_size+1; i++){
+        data_file[i]=data_file_aux[i];
+    }
+    delete [] data_file_aux;
+
+    return data_file;
+
+    delete []data_file;
 }
