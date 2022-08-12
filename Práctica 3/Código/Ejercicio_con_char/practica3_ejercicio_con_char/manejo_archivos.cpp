@@ -47,7 +47,7 @@ unsigned long long size(char *name)
     /*I'm creating a variable type file and it's opening in mode
      * read | position starts at the end of the file. | Operations
      * are performed in binary mode rather than text.*/
-    fstream text(name, fstream::in | fstream::ate | fstream::binary);
+    fstream text(name, fstream::in | fstream::ate);
     /*tellg give me the position where is the cursor*/
     if(text.is_open())
         size_file=text.tellg();
@@ -67,8 +67,8 @@ char *dynamic_data_memory(char *data_file,
     delete [] data_file;
     *file_size=size(original_file);
     cout<<*file_size<<endl;
-    data_file=new char[*file_size+1];
-    for(unsigned long long int i=0; i<*file_size+1; i++){
+    data_file=new char[*file_size];
+    for(unsigned long long int i=0; i<*file_size; i++){
         data_file[i]=data_file_aux[i];
     }
     delete [] data_file_aux;

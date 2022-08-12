@@ -12,8 +12,8 @@ int main()
     unsigned long long int *ptr_file_size=&file_size;
     char *data_file=new char[file_size];
     unsigned int seed=4;
-    cout<<"Enter the name of the .txt file with de original information"<<endl;
-    cin>>original_file;
+    //cout<<"Enter the name of the .txt file with de original information"<<endl;
+    //cin>>original_file;
     //cout<<"Enter the name of the .dat file where the encoded information will go"<<endl;
     //cin>>encoded_binary_file;
     //============================================================
