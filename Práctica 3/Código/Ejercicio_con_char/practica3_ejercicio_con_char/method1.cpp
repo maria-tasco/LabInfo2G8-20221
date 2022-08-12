@@ -22,7 +22,6 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
 {
     /*Leer el archivo binario sin codificar y pasar los datos a un arreglo*/
     unsigned long long int bin_size=size*8;
-
     bool band=true;
     read(unencode_binary,&bin_size,bin_data);
     cout<<bin_data<<endl;
@@ -30,6 +29,7 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
     for(unsigned long long int i=0; i<bin_size; i+=seed){
         char data_bin_aux[seed+1];
         char data_bin_comparasion[seed+1];
+        char data_bin_transfomation[seed+1];
         unsigned short int cont0=0, cont1=0;
         for(unsigned int j=i; j<i+seed; j++){
 
@@ -37,20 +37,22 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
                 /*primer bloque todos 1 por 0 y viceversa*/
                 for(unsigned int k=0; k<seed; k++){
                     data_bin_aux[k]=bin_data[k];
-                    data_bin_comparasion[k]=data_bin_aux[k];
-                    if(data_bin_comparasion[k]=='0'){
-                        data_bin_comparasion[k]='1';
+                    data_bin_transfomation[k]=data_bin_aux[k];
+                    if(data_bin_transfomation[k]=='0'){
+                        data_bin_transfomation[k]='1';
                         cont0++;
                      }
                     else{
-                        data_bin_comparasion[k]='0';
+                        data_bin_transfomation[k]='0';
                         cont1++;
                     }
                     cout<<data_bin_aux[k];
                 }
                 band=false;
             }
-
+//            for(unsigned short int k=0; k<seed;k++){
+//                data_bin_transfomation[k]=data_bin_aux[k];
+//            }
             if(j>=4){
                 /*estoy cogiendo los siguientes 4*/
                 data_bin_aux[j-i]=bin_data[j];
@@ -60,31 +62,41 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
                 else
                     cont1++;
                 /*Voy verificando el cambio*/
-                data_bin_comparasion[j-i]=data_bin_aux[j-i];
+                data_bin_transfomation[j-i]=data_bin_aux[j-i];
                 cout<<data_bin_aux[j-i];
+                if(j==i+seed-1){
+                    if(cont0==cont1){
+                        for(unsigned short int k=0; k<seed; k++){
+                            if(data_bin_transfomation[k]=='0')
+                                data_bin_transfomation[k]='1';
+                            else
+                                data_bin_transfomation[k]='0';
+                       }
+                    }
+                    else if(cont0>cont1){
+                        for(unsigned short int k=1; k<=3; k+=2){
+                            if(data_bin_transfomation[k]=='0')
+                                data_bin_transfomation[k]='1';
+                            else
+                                data_bin_transfomation[k]='0';
+                        }
+                    }
+                    else if(cont1>cont0){
+                        for(unsigned short int k=2; k<seed; k+=3){
+                            if(data_bin_transfomation[k]=='0')
+                                data_bin_transfomation[k]='1';
+                            else
+                                data_bin_transfomation[k]='0';
+                        }
+                    }
+                }
             }
         }//fin del primer for
         data_bin_aux[seed]='\0';
-        data_bin_comparasion[seed]='\0';
+        data_bin_transfomation[seed]='\0';
 
-            if(cont0==cont1){
-                for(unsigned short int k=0; k<seed; k++){
-                    if(data_bin_comparasion[k]=='0')
-                        data_bin_comparasion[k]='1';
-                    else
-                        data_bin_comparasion[k]='0';
-               }
-            }
-            else if(cont0>cont1){
-                for(unsigned short int k=0; k<seed; k++){
-                    if(data_bin_comparasion[k+1]=='0')
-                        data_bin_comparasion[k+1]='1';
-                    else
-                        data_bin_comparasion[k+1]='0';
-                }
-            }
         cout<<"\tTiene "<<cont0<<" ceros y "<<cont1<<" unos";
-        cout<<"\tTransformacion "<<data_bin_comparasion<<endl;
+        cout<<"\tTransformacion "<<data_bin_transfomation<<endl;
         }
     return encoded_binary;
 }
