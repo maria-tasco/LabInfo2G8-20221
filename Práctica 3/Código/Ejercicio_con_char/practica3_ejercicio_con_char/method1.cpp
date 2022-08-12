@@ -79,9 +79,10 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
             }
 
             cout<<bin_data[j];
+
         }//fin del primer for
         data_bin_aux[seed]='\0';
-
+        write(encoded_binary,data_bin_aux,seed,true);
         cout<<"\tTiene "<<cont0<<" ceros y "<<cont1<<" unos";
         cout<<"\tTransformacion "<<data_bin_aux<<endl;
         }

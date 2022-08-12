@@ -15,7 +15,13 @@ void create(char *name, unsigned short op_txt_bin)
 
 void write(char *nombre, char *datos, unsigned long long tam, bool tipo)
 {
-
+    fstream text;
+    text.open(nombre, fstream::app | fstream::binary);
+    if(text.fail()){
+        cout<<"EL archivo no se pudo abrir"<<endl;
+        exit(1);
+    }
+    text.write(datos,tam);
 }
 
 bool read(char *name, unsigned long long *size, char *data)
