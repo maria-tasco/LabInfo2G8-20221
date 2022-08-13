@@ -55,8 +55,13 @@ unsigned long long size(char *name)
      * are performed in binary mode rather than text.*/
     fstream text(name, fstream::in | fstream::ate);
     /*tellg give me the position where is the cursor*/
-    if(text.is_open())
-        size_file=text.tellg();
+    if(text.is_open()){
+        try {
+            size_file=text.tellg();
+        }  catch (bad_alloc) {
+            cout<<"The file input is heavy for the program."<<endl;
+        }
+    }
     else
         cout<<"The file can not open"<<endl;
     text.close();

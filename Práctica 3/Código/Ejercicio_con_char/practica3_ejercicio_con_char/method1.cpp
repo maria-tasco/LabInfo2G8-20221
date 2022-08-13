@@ -17,7 +17,7 @@ void text_to_bin(char *data_file, char *unenconded_binary, unsigned long long *f
 }
 
 
-char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
+char *encodedM1(char *unencode_binary, char *bin_data, char *encoded_binary,
               unsigned long long int size, unsigned int seed)
 {
     /*Leer el archivo binario sin codificar y pasar los datos a un arreglo*/
@@ -41,7 +41,7 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
                 }
             }
             if(j>=4){
-                /*cuento los ceros y unos*/
+                /*count the Zero y one*/
                 if(bin_data[j]=='0')
                     cont0_aux++;
                 else
@@ -80,11 +80,11 @@ char *encoded(char *unencode_binary, char *bin_data, char *encoded_binary,
 
             cout<<bin_data[j];
 
-        }//fin del primer for
+        }//end of the first for
         data_bin_aux[seed]='\0';
         write(encoded_binary,data_bin_aux,seed,true);
-        cout<<"\tTiene "<<cont0<<" ceros y "<<cont1<<" unos";
-        cout<<"\tTransformacion "<<data_bin_aux<<endl;
+        cout<<"\tHave "<<cont0<<" Zero(s) y "<<cont1<<" One(s)";
+        cout<<"\tTransformation "<<data_bin_aux<<endl;
         }
     return encoded_binary;
 }
