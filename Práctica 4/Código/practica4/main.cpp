@@ -5,6 +5,7 @@ int main()
 {
     enrutador prueba;
     red mi_red;
+    enrutador enr;
 //    /*!
 //     * El metodo agragar_enrutador recibe como parametro un entero el cuál si es 1 será para agregar
 //     * el enrutador manualmente (los nodos de enlace y sus costos) y la opción 2 para agregar un enrutador
@@ -56,8 +57,16 @@ int main()
                 prueba.imprimir_enrutador();
                 break;
             case 5: {
-                enrutador enr;
+
                 mi_red.agregar_enrutador_red(enr);
+                break;
+            }
+            case 6: {
+                string nombre_enr_remover;
+                cout<<"Ingrese el nombre del enrutador que quiere remover de la"
+                      "red"<<endl;
+                cin>>nombre_enr_remover;
+                mi_red.remover_enrutadores_red(enr,nombre_enr_remover);
                 break;
             }
 

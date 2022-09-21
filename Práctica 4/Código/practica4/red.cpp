@@ -10,15 +10,13 @@ void red::agregar_enrutador_red(enrutador enr)
 {
     /*agregará un enrutador a la matriz de adyacencia*/
     string nombre_nodo;
-    cout<<"Ingrese el nombre del nodo de enlace en mayuscula, ejm: A: "<<endl;
+    cout<<"Ingrese el nombre del nodo en mayuscula, ejm: A: "<<endl;
     cin>>nombre_nodo;
     enr.agregar_enrutador();
-    cout<<"\tPare el nodo de enlace "<<nombre_nodo<<endl;
-    enr.imprimir_enrutador();
     mi_red.insert(pair<string,enrutador>(nombre_nodo,enr));
-    cout<<"\t ver el contenido de mi red:"<<endl;
+    cout<<"\t ver el contenido de mi red "<<endl;
     for(itrd=mi_red.begin(); itrd!=mi_red.end(); ++itrd){
-        cout<<itrd->first<<" \t= "<<itrd->second.imprimir_enrutador()<<endl;
+        cout<<itrd->first<<" \t -> "<<itrd->second.imprimir_enrutador()<<endl;
     }
 }
 
@@ -29,6 +27,23 @@ void red::matriz_adyacencia()
     de enrutamiento(que permite moficar nombre o costo o eliminar nodo)
     se va a modificar la matriz de adyacencia de cada red*/
 
+}
+
+void red::remover_enrutadores_red(enrutador enr, string nombre_enr_eliminar)
+{
+    /*debo eliminar el nombre del nodo de enlace y el enr con su
+    clave y valor(tabla de enrutamiento)*/
+    for(itrd=mi_red.begin();itrd!=mi_red.end();){
+        if(itrd->first == nombre_enr_eliminar){
+            itrd=mi_red.erase(itrd);
+
+            }
+        else
+            ++itrd;
+    }
+    for(const auto &p : mi_red){
+        cout<<&p.second<<" ";
+    }
 }
 
 //void red::crear_red(string nombre_arch)

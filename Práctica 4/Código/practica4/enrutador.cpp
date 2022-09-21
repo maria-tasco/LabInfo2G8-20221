@@ -87,9 +87,14 @@ void enrutador::modificar_costo(string nodo, int costo_nuevo)
 
 char enrutador::imprimir_enrutador()
 {
-    cout<< "TABLA DE ENRUTAMIENTO: "<< endl;
+    cout<< "\tTABLA DE ENRUTAMIENTO: "<< endl;
     for(itr = enr.begin(); itr != enr.end(); itr++){
         cout << itr ->first << '\t' << itr->second <<endl;
 
     }
+}
+
+void enrutador::eliminar_enrutador()
+{
+
 }

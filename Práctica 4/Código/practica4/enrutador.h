@@ -20,6 +20,7 @@ public:
     void modificar_nodo(string nodo_actual, string nodo_nuevo);
     void modificar_costo(string nodo, int costo_nuevo);
     char imprimir_enrutador();
+    void eliminar_enrutador();
 
 };
 
