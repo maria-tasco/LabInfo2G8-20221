@@ -29,7 +29,7 @@ public:
 
     virtual QRectF boundingRect() const;
     virtual void paint( QPainter *painter,
-                        QStyleOptionGraphicsItem *option,
+                        const QStyleOptionGraphicsItem *option,
                         QWidget *widget = nullptr);
     void advance (int phase);
 };

@@ -21,7 +21,7 @@ public:
     Tablero(QWidget *parent = nullptr);
     ~Tablero();
 
-    void KeyPressEvent( QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event);
     void crearMapa(void);
 private slots:
     void on_pushButtonStart_clicked();
@@ -35,6 +35,8 @@ private:
     Personaje *p1;
 
     int mapa[20][20];
-    QVector<Muro> muros;
+    /*Se crea un vector de punteros a muros para que yo pueda crear muros
+    dinamciamente. Crearlo cuando yo lo necesite*/
+    QVector<Muro *> muros;
 };
 #endif // TABLERO_H

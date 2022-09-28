@@ -1,6 +1,5 @@
 <RCC>
-    <qresource prefix="/Personajeprincipal">
-        <file>spritepacmanyfantasmas.png</file>
+    <qresource prefix="/pacMan">
+        <file>pacMan.png</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
 </RCC>

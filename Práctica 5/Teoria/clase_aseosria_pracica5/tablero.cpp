@@ -21,12 +21,16 @@ void Tablero::keyPressEvent(QKeyEvent *event)
 {
     if(event->key()==Qt::Key_A){
         p1->setVx(-20);
+        p1->setVy(0);
     }else if(event->key()==Qt::Key_D){
         p1->setVx(20);
+        p1->setVy(0);
     }else if(event->key()==Qt::Key_W){
         p1->setVy(-20);
+        p1->setVx(0);
     }else if(event->key()==Qt::Key_S){
         p1->setVy(20);
+        p1->setVx(0);
     }else if(event->key()==Qt::Key_Space){
         p1->setVx(0);
         p1->setVy(0);
@@ -48,6 +52,8 @@ void Tablero::on_pushButtonStart_clicked()
 
     connect(time, &QTimer::timeout,
             scene, &QGraphicsScene::advance);
+
+    ui->pushButtonStart->hide();
 }
 
 void Tablero::crearMapa(void)

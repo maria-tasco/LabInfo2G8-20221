@@ -40,9 +40,9 @@ QRectF Personaje::boundingRect() const
     return QRectF(0,0,dx,dy);
 }
 
-void Personaje::paint(QPainter *painter, QStyleOptionGraphicsItem *option, QWidget *widget)
+void Personaje::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QPixmap personajePrincipal(":/Personajeprincipal/spritepacmanyfantasmas.png");
+    QPixmap personajePrincipal(":/pacMan/pacMan.png");
     painter->drawPixmap(0,0,dx,dy,personajePrincipal);
 }
 
