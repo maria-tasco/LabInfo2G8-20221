@@ -38,6 +38,8 @@ void Tablero::on_pushButtonStart_clicked()
     p1 = new Personaje;
     scene->addItem(p1);
 
+    crearMapa();
+
     time = new QTimer;
     time->start(100);
 
@@ -48,8 +50,16 @@ void Tablero::on_pushButtonStart_clicked()
             scene, &QGraphicsScene::advance);
 }
 
-void Tablero::crearMapa()
+void Tablero::crearMapa(void)
 {
-
+    for(int i=0; i<20; i++){
+        for(int j=0; j<20; j++){
+            if(i%2==1 && j%2==1){
+                mapa[i][j]=1;
+            }else{
+                mapa[i][j]=0;
+            }
+        }
+    }
 }
 

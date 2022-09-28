@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    muro.cpp \
     personaje.cpp \
     tablero.cpp
 
 HEADERS += \
+    muro.h \
     personaje.h \
     tablero.h
 

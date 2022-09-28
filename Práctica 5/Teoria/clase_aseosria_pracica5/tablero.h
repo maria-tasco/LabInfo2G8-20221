@@ -5,7 +5,9 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <QTimer>
+#include <QVector>
 #include "personaje.h"
+#include "muro.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Tablero; }
@@ -20,7 +22,7 @@ public:
     ~Tablero();
 
     void KeyPressEvent( QKeyEvent *event);
-    void crearMapa();
+    void crearMapa(void);
 private slots:
     void on_pushButtonStart_clicked();
 
@@ -33,5 +35,6 @@ private:
     Personaje *p1;
 
     int mapa[20][20];
+    QVector<Muro> muros;
 };
 #endif // TABLERO_H
