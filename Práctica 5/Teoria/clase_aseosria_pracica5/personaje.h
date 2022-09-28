@@ -5,6 +5,7 @@
 #include <string>
 #include <QPainter>
 #include <QPixmap>
+#include "proyectil.h"
 
 using namespace std;
 

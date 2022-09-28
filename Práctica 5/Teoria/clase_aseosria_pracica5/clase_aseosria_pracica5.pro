@@ -14,6 +14,7 @@ SOURCES += \
     monedas.cpp \
     muro.cpp \
     personaje.cpp \
+    proyectil.cpp \
     tablero.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     monedas.h \
     muro.h \
     personaje.h \
+    proyectil.h \
     tablero.h
 
 FORMS += \

@@ -9,6 +9,7 @@
 #include "personaje.h"
 #include "muro.h"
 #include "monedas.h"
+#include "fantasma.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Tablero; }
@@ -40,6 +41,6 @@ private:
     dinamciamente. Crearlo cuando yo lo necesite*/
     QVector<Muro *> muros;
     QVector<Monedas *> moneditas;
-
+    QVector<Fantasma *> fantasmas;
 };
 #endif // TABLERO_H

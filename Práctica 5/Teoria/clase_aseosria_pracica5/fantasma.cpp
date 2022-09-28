@@ -6,7 +6,8 @@ Fantasma::Fantasma()
     dy=16;
 }
 
-Fantasma::Fantasma(float px, float py) : px(px), py(py)
+Fantasma::Fantasma(float px, float py, float vx, float vy)
+    : px(px), py(py), vx(vx), vy(vy)
 {
     dx=16;
     dy=16;
@@ -22,8 +23,14 @@ void Fantasma::paint(QPainter *painter,
                       const QStyleOptionGraphicsItem *option,
                       QWidget *widget)
 {
-    painter->setBrush(Qt::yellow);
+    painter->setBrush(Qt::red);
     painter->drawEllipse(boundingRect());
+}
+
+void Fantasma::advance(int phase)
+{
+    px = px + vx*DT;
+    py = py + vy*DT;
 }
 
 float Fantasma::getVx() const
@@ -44,4 +51,24 @@ float Fantasma::getVy() const
 void Fantasma::setVy(float newVy)
 {
     vy = newVy;
+}
+
+float Fantasma::getPx() const
+{
+    return px;
+}
+
+void Fantasma::setPx(float newPx)
+{
+    px = newPx;
+}
+
+float Fantasma::getPy() const
+{
+    return py;
+}
+
+void Fantasma::setPy(float newPy)
+{
+    py = newPy;
 }
