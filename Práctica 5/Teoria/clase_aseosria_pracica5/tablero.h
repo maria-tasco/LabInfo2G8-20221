@@ -8,6 +8,7 @@
 #include <QVector>
 #include "personaje.h"
 #include "muro.h"
+#include "monedas.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Tablero; }
@@ -38,5 +39,7 @@ private:
     /*Se crea un vector de punteros a muros para que yo pueda crear muros
     dinamciamente. Crearlo cuando yo lo necesite*/
     QVector<Muro *> muros;
+    QVector<Monedas *> moneditas;
+
 };
 #endif // TABLERO_H

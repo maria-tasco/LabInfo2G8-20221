@@ -9,12 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    fantasma.cpp \
     main.cpp \
+    monedas.cpp \
     muro.cpp \
     personaje.cpp \
     tablero.cpp
 
 HEADERS += \
+    fantasma.h \
+    monedas.h \
     muro.h \
     personaje.h \
     tablero.h
@@ -29,3 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Personajes.qrc
+
+DISTFILES += \
+    mapa1.txt

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>70</y>
-      <width>621</width>
-      <height>291</height>
+      <y>50</y>
+      <width>630</width>
+      <height>630</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -41,8 +41,8 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>10</y>
+      <x>240</x>
+      <y>0</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -58,8 +58,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="pushButtonStart">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>370</y>
+      <x>510</x>
+      <y>0</y>
       <width>89</width>
       <height>25</height>
      </rect>

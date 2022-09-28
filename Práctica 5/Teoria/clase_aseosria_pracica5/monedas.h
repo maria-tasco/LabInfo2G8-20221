@@ -1,6 +1,5 @@
-#ifndef MURO_H
-#define MURO_H
-
+#ifndef MONEDAS_H
+#define MONEDAS_H
 #include <QGraphicsItem>
 #include <string>
 #include <QPainter>
@@ -8,14 +7,14 @@
 
 using namespace std;
 
-class Muro : public QGraphicsItem
+class Monedas: public QGraphicsItem
 {
 private:
     float px, py;
     float dx, dy;
 public:
-    Muro();
-    Muro(float px, float py);
+    Monedas();
+    Monedas(float px, float py);
 
     virtual QRectF boundingRect() const;
     virtual void paint( QPainter *painter,
@@ -23,4 +22,4 @@ public:
                         QWidget *widget = nullptr);
 };
 
-#endif // MURO_H
+#endif // MONEDAS_H

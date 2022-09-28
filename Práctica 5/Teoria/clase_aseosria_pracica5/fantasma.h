@@ -1,5 +1,5 @@
-#ifndef MURO_H
-#define MURO_H
+#ifndef FANTASMA_H
+#define FANTASMA_H
 
 #include <QGraphicsItem>
 #include <string>
@@ -8,19 +8,26 @@
 
 using namespace std;
 
-class Muro : public QGraphicsItem
+class Fantasma : public QGraphicsItem
 {
 private:
+    string nombre;
     float px, py;
+    float vx, vy;
     float dx, dy;
 public:
-    Muro();
-    Muro(float px, float py);
+    Fantasma();
+    Fantasma(float px, float py);
 
     virtual QRectF boundingRect() const;
     virtual void paint( QPainter *painter,
                         const QStyleOptionGraphicsItem *option,
                         QWidget *widget = nullptr);
+    void advance (int phase);
+    float getVx() const;
+    void setVx(float newVx);
+    float getVy() const;
+    void setVy(float newVy);
 };
 
-#endif // MURO_H
+#endif // FANTASMA_H
