@@ -15,25 +15,6 @@ Personaje::Personaje(float px, float py, string nombre)
     this->nombre = nombre;
     vida=100;
 }
-float Personaje::getVx() const
-{
-    return vx;
-}
-
-void Personaje::setVx(float newVx)
-{
-    vx = newVx;
-}
-
-float Personaje::getVy() const
-{
-    return vy;
-}
-
-void Personaje::setVy(float newVy)
-{
-    vy = newVy;
-}
 
 QRectF Personaje::boundingRect() const
 {
@@ -56,4 +37,30 @@ void Personaje::advance(int phase)
 
     setPos(px,py);
 }
+
+void Personaje::disparar()
+{
+    Proyectiles.push_back(new Proyectil(px,py,vx,vy));
+}
+
+float Personaje::getVx() const
+{
+    return vx;
+}
+
+void Personaje::setVx(float newVx)
+{
+    vx = newVx;
+}
+
+float Personaje::getVy() const
+{
+    return vy;
+}
+
+void Personaje::setVy(float newVy)
+{
+    vy = newVy;
+}
+
 

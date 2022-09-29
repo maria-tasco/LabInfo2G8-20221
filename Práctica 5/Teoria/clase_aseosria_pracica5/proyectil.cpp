@@ -31,4 +31,5 @@ void Proyectil::advance(int phase)
 {
     px = px + vx*DT;
     py = py + vy*DT;
+    setPos(px,py);
 }

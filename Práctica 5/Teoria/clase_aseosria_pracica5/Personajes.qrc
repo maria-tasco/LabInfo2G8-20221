@@ -2,4 +2,9 @@
     <qresource prefix="/pacMan">
         <file>pacMan.png</file>
     </qresource>
+    <qresource prefix="/Fantasmas">
+        <file>fantasmaAmarillo.png</file>
+        <file>fantasmaRojo.png</file>
+        <file>fantasmaRosa.png</file>
+    </qresource>
 </RCC>

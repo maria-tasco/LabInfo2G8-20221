@@ -19,6 +19,8 @@ private:
     float vx, vy;
     float ax, ay;
     float dx, dy;
+
+    QVector<Proyectil *> Proyectiles;
 public:
     Personaje();
     Personaje(float px, float py, string nombre);
@@ -32,7 +34,9 @@ public:
     virtual void paint( QPainter *painter,
                         const QStyleOptionGraphicsItem *option,
                         QWidget *widget = nullptr);
+
     void advance (int phase);
+    void disparar(void);
 };
 
 

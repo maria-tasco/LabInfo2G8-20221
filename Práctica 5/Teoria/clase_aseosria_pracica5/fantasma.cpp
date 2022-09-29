@@ -23,14 +23,15 @@ void Fantasma::paint(QPainter *painter,
                       const QStyleOptionGraphicsItem *option,
                       QWidget *widget)
 {
-    painter->setBrush(Qt::red);
-    painter->drawEllipse(boundingRect());
+    QPixmap fRosa(":/Fantasmas/fantasmaRosa.png");
+    painter->drawPixmap(0,0,dx,dy,fRosa);
 }
 
 void Fantasma::advance(int phase)
 {
     px = px + vx*DT;
     py = py + vy*DT;
+    setPos(px,py);
 }
 
 float Fantasma::getVx() const

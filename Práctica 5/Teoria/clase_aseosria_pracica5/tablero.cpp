@@ -34,6 +34,8 @@ void Tablero::keyPressEvent(QKeyEvent *event)
     }else if(event->key()==Qt::Key_Space){
         p1->setVx(0);
         p1->setVy(0);
+    }else if(event->key()==Qt::Key_R){
+        p1->disparar();
     }
 }
 
@@ -43,6 +45,9 @@ void Tablero::on_pushButtonStart_clicked()
     scene->addItem(p1);
 
     crearMapa();
+
+    fantasmas.push_back(new Fantasma(100,100,20,0));
+    scene->addItem(fantasmas.last());
 
     time = new QTimer;
     time->start(100);
