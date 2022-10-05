@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/scoring objects">
+        <file>moneda.png</file>
+        <file>cereza.png</file>
+    </qresource>
+</RCC>

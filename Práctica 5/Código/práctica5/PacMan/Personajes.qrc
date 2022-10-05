@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/P_F">
+        <file>fantasmaAmarillo.png</file>
+        <file>fantasmaRojo.png</file>
+        <file>fantasmaRosa.png</file>
+        <file>pacMan.png</file>
+    </qresource>
+</RCC>
