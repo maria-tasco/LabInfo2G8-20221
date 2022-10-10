@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    laberinto.cpp
+    laberinto.cpp \
+    personaje.cpp
 
 HEADERS += \
-    laberinto.h
+    laberinto.h \
+    personaje.h
 
 FORMS += \
     laberinto.ui
@@ -26,3 +28,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     Objetos.qrc \
     Personajes.qrc
+
+DISTFILES += \
+    laberinto

@@ -19,8 +19,8 @@
      <rect>
       <x>30</x>
       <y>50</y>
-      <width>701</width>
-      <height>371</height>
+      <width>700</width>
+      <height>400</height>
      </rect>
     </property>
     <property name="backgroundBrush">
@@ -42,7 +42,7 @@
      </brush>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButtonStart">
     <property name="geometry">
      <rect>
       <x>330</x>
