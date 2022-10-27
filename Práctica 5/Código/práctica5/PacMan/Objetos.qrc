@@ -2,5 +2,7 @@
     <qresource prefix="/scoring objects">
         <file>moneda.png</file>
         <file>cereza.png</file>
+        <file>bloqueV.png</file>
+        <file>bloqueH.png</file>
     </qresource>
 </RCC>

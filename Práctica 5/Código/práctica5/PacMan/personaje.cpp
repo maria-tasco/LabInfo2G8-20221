@@ -3,8 +3,8 @@
 Personaje::Personaje()
     : vx(0), vy(0),
       ax(0), ay(0),
-      dx(30), dy(30),
-      px(60), py(0)
+      dx(25), dy(25),
+      px(30), py(0)
 {
     vida = 3;
 }
@@ -12,7 +12,7 @@ Personaje::Personaje()
 Personaje::Personaje(float px, float py)
     : vx(0), vy(0),
       ax(0), ay(0),
-      dx(30), dy(30),
+      dx(25), dy(25),
       px(px), py(py)
 {
     vida = 1;

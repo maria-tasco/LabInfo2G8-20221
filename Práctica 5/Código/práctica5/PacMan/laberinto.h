@@ -6,6 +6,9 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include "personaje.h"
+#include "barrash.h"
+#include "barrasv.h"
+#include "manejoarchivos.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Laberinto; }
@@ -29,5 +32,8 @@ private:
     QTimer *time;
 
     Personaje *PacMan;
+    QVector<BarrasH *> bh;
+    QVector<BarrasV *> bv;
+    int mapa[20][20];
 };
 #endif // LABERINTO_H
