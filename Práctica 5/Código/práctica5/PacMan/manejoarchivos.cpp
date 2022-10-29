@@ -1,6 +1,7 @@
 #include "manejoarchivos.h"
 
-bool read(char *name, char *data, unsigned long long size) {
+char* read(char *name, char *data, unsigned int size) {
+
     fstream text(name, fstream::in | fstream::binary);
 
     bool is_open = text.is_open();
@@ -26,7 +27,6 @@ bool read(char *name, char *data, unsigned long long size) {
         cout << "The file can not open" << endl;
     }
 
+    return data;
     text.close();
-
-    return is_open;
 }

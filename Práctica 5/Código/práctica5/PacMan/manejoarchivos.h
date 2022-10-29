@@ -7,6 +7,6 @@
 using namespace std;
 
 
-bool read (char *name, char *data, unsigned long long size);
+char *read(char *name, char *data, unsigned int size);
 
 #endif // MANEJOARCHIVOS_H

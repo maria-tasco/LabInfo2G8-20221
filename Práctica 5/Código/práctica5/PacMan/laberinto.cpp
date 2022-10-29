@@ -41,6 +41,9 @@ void Laberinto::keyPressEvent(QKeyEvent *event)
 
 void Laberinto::crearMundo()
 {
+    char laberinto[30] = "laberinto.txt";
+    char *data_file = nullptr;
+    read(laberinto,data_file,20);
     /*Algoritmo que llena la logica -> Archivo, radom, ciclo
     una función que se encargue de leer y llenar la matriz
     con los datos*/
