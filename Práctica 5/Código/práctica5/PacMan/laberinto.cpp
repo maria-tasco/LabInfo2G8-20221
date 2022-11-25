@@ -43,7 +43,8 @@ void Laberinto::crearMundo()
 {
     char laberinto[30] = "laberinto.txt";
     char *data_file = nullptr;
-    read(laberinto,data_file,20);
+    char *datos_laberinto=nullptr;
+    datos_laberinto = read(laberinto,data_file,20);
     /*Algoritmo que llena la logica -> Archivo, radom, ciclo
     una función que se encargue de leer y llenar la matriz
     con los datos*/
@@ -66,9 +67,10 @@ void Laberinto::crearMundo()
     una función que gráfica*/
     for(int i=0; i<20; i++){
         for(int j=0; j<20; j++){
+
             if(mapa[i][j] ==1 ){
                 /*quiere decir que ahí va un muro así que debo crealo
-                ´y multiplico por 30 la posicion que estoy trabajando*/
+                tiplico por 30 la posicion que estoy trabajando*/
                 BarrasH *m = new BarrasH(i*30,j*30);
                 /*Al vector de muros le agrego los que voy creando*/
                 bh.push_back(m);
@@ -77,10 +79,11 @@ void Laberinto::crearMundo()
                 me retorna ya directamente el puntero*/
                 /*Agregar a la escena ese muro, el último muro agregado*/
                 scene->addItem(bh.last());
-            }/*else if(mapa[i][j] ==2){
+            }else if(mapa[i][j] ==2){
                 moneditas.push_back(new Monedas(i*30,j*30));
                 scene->addItem(moneditas.last());
-            }*/
+            }
+
         }
     }
 }

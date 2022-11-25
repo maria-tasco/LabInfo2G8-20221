@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     laberinto.cpp \
     manejoarchivos.cpp \
+    monedas.cpp \
     personaje.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     barrasv.h \
     laberinto.h \
     manejoarchivos.h \
+    monedas.h \
     personaje.h
 
 FORMS += \

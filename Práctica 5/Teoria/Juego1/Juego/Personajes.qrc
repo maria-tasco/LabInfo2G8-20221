@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/mesajero">
+        <file>ImgProyectoFinal/mensajeroPrueba.png</file>
+    </qresource>
+</RCC>

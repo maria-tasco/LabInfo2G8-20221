@@ -9,6 +9,7 @@
 #include "barrash.h"
 #include "barrasv.h"
 #include "manejoarchivos.h"
+#include "monedas.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Laberinto; }
@@ -34,6 +35,7 @@ private:
     Personaje *PacMan;
     QVector<BarrasH *> bh;
     QVector<BarrasV *> bv;
-    int mapa[20][20];
+    QVector<Monedas *> moneditas;
+    int mapa[20][30];
 };
 #endif // LABERINTO_H
